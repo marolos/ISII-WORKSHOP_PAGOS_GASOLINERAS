@@ -3,20 +3,23 @@ package ec.edu.espol.workshops.second;
 public class Customer {
 	private int age;
 	private char sex;
-	private boolean isMarried;
+	private boolean isMrrd;
 	private boolean hasLincense = false;
 	
 	public Customer(int age, char sex, boolean isMarried) {
 		this.age = age;
 		this.sex = sex;
-		this.isMarried = isMarried;
+		this.isMrrd = isMarried;
 	}
 	
 	public boolean canBuyInsurance() {
 		if (!this.hasLincense) {
 			return false;
 		}
-		return this.age < 80;
+		if(this.age >= 80) {
+			return false;
+		}
+		return true;
 	}
 	
 	public int getAge() {
@@ -44,11 +47,11 @@ public class Customer {
 	}
 
 	public boolean isMarried() {
-		return isMarried;
+		return isMrrd;
 	}
 
 	public void setIsMarried(boolean isMarried) {
-		this.isMarried = isMarried;
+		this.isMrrd = isMarried;
 	}
 	
 }
