@@ -1,57 +1,61 @@
 package ec.edu.espol.workshops.second;
 
 public class Customer {
-    private int age;
-    private char sex;
-    private boolean isMarried;
-    private boolean hasLincense = false;
+  private int age;
+  private char sex;
+  private boolean isMarried;
+  private boolean hasLincense = false;
 
-    public Customer(int age, char sex, boolean isMarried) {
-	this.age = age;
-	this.sex = sex;
-	this.isMarried = isMarried;
+  public Customer(int age, char sex, boolean isMarried) {
+    this.age = age;
+    this.sex = sex;
+    this.isMarried = isMarried;
+  }
+
+  public boolean canBuyInsurance() {
+    if (!this.hasLincense) {
+      return false;
     }
+    return this.age < 80;
+  }
 
-    public boolean canBuyInsurance() {
-	if (!this.hasLincense) {
-	    return false;
-	}
-	if (this.age >= 80) {
-	    return false;
-	}
-	return true;
-    }
+  public int getAge() {
+    return age;
+  }
 
-    public int getAge() {
-	return age;
-    }
+  public boolean hasLincense() {
+    return this.hasLincense;
+  }
 
-    public boolean hasLincense() {
-	return this.hasLincense;
-    }
+  public int getAge() {
+    return age;
+  }
 
-    public void setHasLicense(boolean has) {
-	this.hasLincense = has;
-    }
+  public boolean hasLincense() {
+    return this.hasLincense;
+  }
 
-    public void setAge(int age) {
-	this.age = age;
-    }
+  public void setHasLicense(boolean has) {
+    this.hasLincense = has;
+  }
 
-    public char getSex() {
-	return sex;
-    }
+  public void setAge(int age) {
+    this.age = age;
+  }
 
-    public void setSex(char sex) {
-	this.sex = sex;
-    }
+  public char getSex() {
+    return sex;
+  }
 
-    public boolean isMarried() {
-	return isMarried;
-    }
+  public void setSex(char sex) {
+    this.sex = sex;
+  }
 
-    public void setIsMarried(boolean isMarried) {
-	this.isMarried = isMarried;
-    }
+  public boolean isMarried() {
+    return isMarried;
+  }
 
+  public void setIsMarried(boolean isMarried) {
+    this.isMarried = isMarried;
+  }
 }
