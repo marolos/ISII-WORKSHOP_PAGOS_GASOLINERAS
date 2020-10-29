@@ -15,7 +15,7 @@ public class CarInsurance {
     boolean male = this.customer.getSex() == 'M';
     boolean young = this.customer.getAge() <= 25;
     boolean notTooOld =
-      this.customer.getAge() > 45 && this.customer.getAge() < 65;
+	this.customer.getAge() > 45 && this.customer.getAge() < 65;
     boolean married = this.customer.isMarried();
     if (male && young && !married) {
       base += 1500.0;
