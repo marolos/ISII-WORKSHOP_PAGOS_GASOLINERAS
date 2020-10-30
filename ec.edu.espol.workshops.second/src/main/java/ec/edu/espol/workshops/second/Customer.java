@@ -1,13 +1,13 @@
 package ec.edu.espol.workshops.second;
 
 public class Customer {
-  private int Age;
+  private int age;
   private char sex;
   private boolean isMarried;
   private boolean hasLincense = false;
 
   public Customer(int age, char sex, boolean isMarried) {
-    this.Age = age;
+    this.age = age;
     this.sex = sex;
     this.isMarried = isMarried;
   }
@@ -16,11 +16,11 @@ public class Customer {
     if (!this.hasLincense) {
       return false;
     }
-    return this.Age < 80;
+    return this.age < 80;
   }
   
   public int getAge() {
-    return Age;
+    return age;
   }
 
   public boolean hasLincense() {
@@ -32,7 +32,7 @@ public class Customer {
   }
 
   public void setAge(int age) {
-    this.Age = age;
+    this.age = age;
   }
 
   public char getSex() {
