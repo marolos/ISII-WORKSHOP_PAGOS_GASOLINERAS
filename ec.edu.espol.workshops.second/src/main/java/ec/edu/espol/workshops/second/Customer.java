@@ -16,10 +16,7 @@ public class Customer {
     if (!this.hasLincense) {
       return false;
     }
-    if (this.age >= 80) {
-      return false;
-    }
-    return true;
+    return this.age < 80;
   }
 
   public int getAge() {
