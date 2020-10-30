@@ -2,21 +2,21 @@ package ec.edu.espol.workshops.second;
 
 public class CarInsurance {
   private Double base = 500.0;
-  private Customer Customer;
+  private Customer customer;
 
   public void setCustomer(Customer customer) {
-    this.Customer = customer;
+    this.customer = customer;
   }
 
   public Integer doInsuranceBalance() {
-    if (this.Customer == null) {
+    if (this.customer == null) {
       return -1;
     }
     boolean male = this.Customer.getSex() == 'M';
     boolean young = this.Customer.getAge() <= 25;
     boolean notTooOld =
-      this.Customer.getAge() > 45 && this.Customer.getAge() < 65;
-    boolean married = this.Customer.isMarried();
+      this.customer.getAge() > 45 && this.customer.getAge() < 65;
+    boolean married = this.customer.isMarried();
     if (male && young && !married) {
       base += 1500.0;
     } else if (!male || married) {
@@ -28,9 +28,9 @@ public class CarInsurance {
   }
 
   public Customer getCustomer() {
-    if (this.Customer == null) {
+    if (this.customer == null) {
       return null;
     }
-    return this.Customer;
+    return this.customer;
   }
 }
