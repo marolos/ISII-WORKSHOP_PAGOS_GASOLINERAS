@@ -1,36 +1,38 @@
 package ec.edu.espol.workshops.second;
 
 public class CarInsurance {
-  private Double Base = 500.0;
-  private Customer Customer;
+  private Double base = 500.0;
+  private Customer customer;
 
   public void setCustomer(Customer customer) {
-    this.Customer = customer;
+    this.customer = customer;
   }
 
   public Integer doInsuranceBalance() {
-    if (this.Customer == null) {
+    if (this.customer == null) {
       return -1;
     }
-    boolean male = this.Customer.getSex() == 'M';
-    boolean young = this.Customer.getAge() <= 25;
-    boolean notTooOld =
-      this.Customer.getAge() > 45 && this.Customer.getAge() < 65;
-    boolean married = this.Customer.isMarried();
+    
+    boolean male = this.customer.getSex() == 'M';
+    boolean young = this.customer.getAge() <= 25;
+    boolean notTooOld = this.customer.getAge() > 45 && this.customer.getAge() < 65;
+    boolean married = this.customer.isMarried();
     if (male && young && !married) {
-      Base += 1500.0;
+      base += 1500.0;
     } else if (!male || married) {
-      Base -= 200.0;
+      base -= 200.0;
     } else if (notTooOld) {
-      Base -= 100;
+      base -= 100;
+
     }
     return 1;
   }
 
   public Customer getCustomer() {
-    if (this.Customer == null) {
+    if (this.customer == null) {
       return null;
     }
-    return this.Customer;
+    return this.customer;
   }
 }
+
