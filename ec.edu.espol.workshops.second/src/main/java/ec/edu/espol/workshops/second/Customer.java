@@ -39,7 +39,6 @@ public class Customer {
     return sex;
   }
 
-
   public void setSex(char sex) {
     this.sex = sex;
   }

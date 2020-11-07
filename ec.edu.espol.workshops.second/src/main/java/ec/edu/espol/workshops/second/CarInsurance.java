@@ -23,7 +23,6 @@ public class CarInsurance {
       base -= 200.0;
     } else if (notTooOld) {
       base -= 100;
-
     }
     return 1;
   }
@@ -35,4 +34,3 @@ public class CarInsurance {
     return this.customer;
   }
 }
-
