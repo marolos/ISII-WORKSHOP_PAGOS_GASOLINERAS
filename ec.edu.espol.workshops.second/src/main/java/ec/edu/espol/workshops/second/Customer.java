@@ -1,6 +1,7 @@
 package ec.edu.espol.workshops.second;
 
 public class Customer {
+
   private int age;
   private char sex;
   private boolean isMarried;
@@ -18,7 +19,7 @@ public class Customer {
     }
     return this.age < 80;
   }
-  
+
   public int getAge() {
     return age;
   }
