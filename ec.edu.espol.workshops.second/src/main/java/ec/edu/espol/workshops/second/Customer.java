@@ -28,7 +28,7 @@ public class Customer {
   }
 
   public void setHasLicense(boolean has) {
-    this.hasLincense = has;
+    this.hasLincense = !has;
   }
 
   public void setAge(int age) {
