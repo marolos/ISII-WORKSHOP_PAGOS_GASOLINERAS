@@ -20,6 +20,7 @@ public class Main {
 
     /* Test Case test-003 */
     customer.setAge(30);
+    customer.setHasLicense(true);
     result = customer.canBuyInsurance();
     System.out.printf("canBuyInsurance: %s \n", result ? "pass" : "fail");
   }
