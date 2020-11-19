@@ -3,25 +3,47 @@ package ec.edu.espol.workshops.second;
 public class Main {
 
   public static void main(String[] args) {
-
-    boolean result;
 	
-    /* Test Case test-001 */
-    CarInsurance insurance = new CarInsurance();
-    result = insurance.doInsuranceBalance() == -1;
-    System.out.printf("doInsuranceBalance: %s \n", result ? "pass" : "fail");
+    Customer sysTest1 = new Customer(30, 'F', true);
+    CarInsurance insuranceSysTes1 = new CarInsurance();
+    insuranceSysTes1.setCustomer(sysTest1);
+    System.out.println(insuranceSysTes1.doInsuranceBalance());
+    
+    //===========================================================
+    
+    Customer sysTest2 = new Customer(20, 'M', false);
+    CarInsurance insuranceSysTes2 = new CarInsurance();
+    insuranceSysTes2.setCustomer(sysTest2);
+    System.out.println(insuranceSysTes2.doInsuranceBalance());
+    
+    //===========================================================
+    
+    Customer sysTest3 = new Customer(-5, 'F', false);
+    CarInsurance insuranceSysTes3 = new CarInsurance();
+    insuranceSysTes3.setCustomer(sysTest3);
+    System.out.println(insuranceSysTes3.doInsuranceBalance());
 
-    /* Test Case test-002 */
-    Customer customer = new Customer(20, 'M', false);
-    insurance.setCustomer(customer);
-    result =
-      insurance.doInsuranceBalance() == 1 && insurance.getBase() == 2000.0;
-    System.out.printf("doInsuranceBalance: %s \n", result ? "pass" : "fail");
+    //===========================================================
+    
+    Customer sysTest4 = new Customer(40, 'U', true);
+    CarInsurance insuranceSysTes4 = new CarInsurance();
+    insuranceSysTes4.setCustomer(sysTest4);
+    System.out.println(insuranceSysTes4.doInsuranceBalance());
 
-    /* Test Case test-003 */
-    customer.setAge(30);
-    customer.setHasLicense(true);
-    result = customer.canBuyInsurance();
-    System.out.printf("canBuyInsurance: %s \n", result ? "pass" : "fail");
+    /*
+    //===========================================================
+    
+    Customer sysTest5 = new Customer(null, 'F', true);
+    CarInsurance insuranceSysTes5 = new CarInsurance();
+    insuranceSysTes5.setCustomer(sysTest5);
+    insuranceSysTes5.doInsuranceBalance();
+
+    //===========================================================
+    
+    Customer sysTest6 = new Customer(40, 'F', null);
+    CarInsurance insuranceSysTes6 = new CarInsurance();
+    insuranceSysTes6.setCustomer(sysTest6);
+    insuranceSysTes6.doInsuranceBalance();
+    */
   }
 }
