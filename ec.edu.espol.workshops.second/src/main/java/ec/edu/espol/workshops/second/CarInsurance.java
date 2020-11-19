@@ -13,6 +13,13 @@ public class CarInsurance {
     if (this.customer == null) {
       return -1;
     }
+    if (this.customer.getAge() < 0){
+      return -1;
+    }
+    char sex = this.customer.getSex();
+    if (!(sex == 'M' || sex == 'F')){
+      return -1;
+    }
     boolean male = this.customer.getSex() == 'M';
     boolean young = this.customer.getAge() <= 25;
     boolean notTooOld =
