@@ -5,7 +5,6 @@ public class Main {
   public static void main(String[] args) {
 
     boolean result;
-	
     /* Test Case test-001 */
     CarInsurance insurance = new CarInsurance();
     result = insurance.doInsuranceBalance() == -1;
