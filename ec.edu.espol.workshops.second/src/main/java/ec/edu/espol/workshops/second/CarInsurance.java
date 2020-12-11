@@ -10,7 +10,10 @@ public class CarInsurance {
   }
 
   public Integer doInsuranceBalance() {
-    if (this.customer == null) {
+    boolean isCorrectSex = this.customer.getSex() == 'M' || this.customer.getSex() == 'F';
+    boolean isMenor = this.customer.getAge() < 18;
+    boolean isMayor = this.customer.getAge() >= 80;
+    if (this.customer == null || !isCorrectSex || isMenor || isMayor) {
       return -1;
     }
     boolean male = this.customer.getSex() == 'M';
@@ -25,7 +28,7 @@ public class CarInsurance {
     } else if (notTooOld) {
       base -= 100;
     }
-    return 1;
+    return base;
   }
 
   public Customer getCustomer() {
