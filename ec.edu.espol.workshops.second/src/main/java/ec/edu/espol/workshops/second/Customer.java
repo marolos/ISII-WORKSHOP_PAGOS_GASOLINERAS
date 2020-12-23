@@ -23,32 +23,38 @@ public class Customer {
   public int getAge() {
     return age;
   }
-
+/*
   public boolean hasLincense() {
     return this.hasLincense;
   }
-
+*/
   public void setHasLicense(boolean has) {
     this.hasLincense = has;
   }
 
+  /*
   public void setAge(int age) {
     this.age = age;
   }
+  */
 
   public char getSex() {
     return sex;
   }
 
+  /*
   public void setSex(char sex) {
     this.sex = sex;
   }
+  */
 
   public boolean isMarried() {
     return isMarried;
   }
 
+  /*
   public void setIsMarried(boolean isMarried) {
     this.isMarried = isMarried;
   }
+  */
 }
