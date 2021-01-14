@@ -2,7 +2,7 @@ package ec.edu.espol.workshops.second;
 
 public class CarInsurance {
 
-  private Double base = 500.0;
+  private Integer base = 500;
   private Customer customer;
 
   public void setCustomer(Customer customer) {
@@ -10,11 +10,14 @@ public class CarInsurance {
   }
 
   public Integer doInsuranceBalance() {
+	  if (this.customer == null) {
+		  return -1;
+	  }
     boolean isCorrectSex = this.customer.getSex() == 'M' || this.customer.getSex() == 'F';
     boolean isMenor = this.customer.getAge() < 18;
     boolean isMayor = this.customer.getAge() >= 80;
-    if (this.customer == null || !isCorrectSex || isMenor || isMayor) {
-      return -1;
+    if(!isCorrectSex || isMenor || isMayor) {
+    	return -1;
     }
     boolean male = this.customer.getSex() == 'M';
     boolean young = this.customer.getAge() <= 25;
@@ -22,9 +25,9 @@ public class CarInsurance {
       this.customer.getAge() > 45 && this.customer.getAge() < 65;
     boolean married = this.customer.isMarried();
     if (male && young && !married) {
-      base += 1500.0;
+      base += 1500;
     } else if (!male || married) {
-      base -= 200.0;
+      base -= 200;
     } else if (notTooOld) {
       base -= 100;
     }
@@ -38,7 +41,7 @@ public class CarInsurance {
     return this.customer;
   }
 
-  public Double getBase() {
+  public Integer getBase() {
     return this.base;
   }
 }
