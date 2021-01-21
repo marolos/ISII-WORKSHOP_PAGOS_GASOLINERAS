@@ -10,20 +10,26 @@ public class CarInsurance {
   }
 
   public Integer doInsuranceBalance() {
-	  if (this.customer == null) {
-		  return -1;
-	  }
-    boolean isCorrectSex = this.customer.getSex() == 'M' || this.customer.getSex() == 'F';
+    if (this.customer == null) {
+      return -1;
+    }
+    boolean isCorrectSex =
+      this.customer.getSex() == 'M' || this.customer.getSex() == 'F';
     boolean isMenor = this.customer.getAge() < 18;
     boolean isMayor = this.customer.getAge() >= 80;
-    if(!isCorrectSex || isMenor || isMayor) {
-    	return -1;
+    if (!isCorrectSex || isMenor || isMayor) {
+      return -1;
     }
     boolean male = this.customer.getSex() == 'M';
     boolean young = this.customer.getAge() <= 25;
     boolean notTooOld =
-      this.customer.getAge() > 45 && this.customer.getAge() < 65;
+      this.customer.getAge() >= 45 && this.customer.getAge() < 65;
     boolean married = this.customer.isMarried();
+
+    // 
+    if (male && this.customer.getAge() > 25 && this.customer.getAge() < 45) {
+      base -= 100;
+    }
     if (male && young && !married) {
       base += 1500;
     } else if (!male || married) {

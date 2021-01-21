@@ -23,5 +23,8 @@ public class Main {
     customer.setHasLicense(true);
     result = customer.canBuyInsurance();
     System.out.printf("canBuyInsurance: %s \n", result ? "pass" : "fail");
+
+    /** Test new feature */
+    
   }
 }
