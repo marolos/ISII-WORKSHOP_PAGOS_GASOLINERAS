@@ -8,22 +8,46 @@ public class Main {
 	
     /* Test Case test-001 */
     CarInsurance insurance = new CarInsurance();
-    result = insurance.doInsuranceBalance() == -1;
+    Customer customer = new Customer(30, 'F', true);
+    insurance.setCustomer(customer);
+    result = insurance.doInsuranceBalance() == 300;
     System.out.printf("doInsuranceBalance: %s \n", result ? "pass" : "fail");
 
     /* Test Case test-002 */
-    Customer customer = new Customer(20, 'M', false);
+    insurance = new CarInsurance();
+    customer = new Customer(20, 'M', false);
     insurance.setCustomer(customer);
-    result =
-      insurance.doInsuranceBalance() == 1 && insurance.getBase() == 2000.0;
+    result = insurance.doInsuranceBalance() == 2000;
     System.out.printf("doInsuranceBalance: %s \n", result ? "pass" : "fail");
 
     /* Test Case test-003 */
-    customer.setAge(30);
-    customer.setHasLicense(true);
-    result = customer.canBuyInsurance();
-    System.out.printf("canBuyInsurance: %s \n", result ? "pass" : "fail");
+    insurance = new CarInsurance();
+    customer = new Customer(-5, 'F', false);
+    insurance.setCustomer(customer);
+    result = insurance.doInsuranceBalance() == -1;
+    System.out.printf("doInsuranceBalance: %s \n", result ? "pass" : "fail");
+    
+    /* Test Case test-004 */
+    insurance = new CarInsurance();
+    customer = new Customer(40, 'U', true);
+    insurance.setCustomer(customer);
+    result = insurance.doInsuranceBalance() == -1;
+    System.out.printf("doInsuranceBalance: %s \n", result ? "pass" : "fail");
+    
+    /* Test Case test-005 */
+    insurance = new CarInsurance();
+    customer = new Customer(50, 'M', false);
+    insurance.setCustomer(customer);
+    result = insurance.doInsuranceBalance() == 400;
+    System.out.printf("doInsuranceBalance: %s \n", result ? "pass" : "fail");
+    
 
+    /* Test Case test-006 */
+    insurance = new CarInsurance();
+    customer = new Customer(28, 'M', true);
+    insurance.setCustomer(customer);
+    result = insurance.doInsuranceBalance() == 400;
+    System.out.printf("doInsuranceBalance: %s \n", result ? "pass" : "fail");
     /** Test new feature */
     
   }
