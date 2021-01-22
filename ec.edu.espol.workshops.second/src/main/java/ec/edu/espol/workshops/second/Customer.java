@@ -12,6 +12,10 @@ public class Customer {
     this.sex = sex;
     this.isMarried = isMarried;
   }
+  
+  public Customer() {
+	  
+  }
 
   public boolean canBuyInsurance() {
     if (!this.hasLincense) {
